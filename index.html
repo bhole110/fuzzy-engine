@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1229254522661064');
+fbq('track','PageView');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Join Official Channel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:linear-gradient(135deg,#0f0f17,#1c1c2b,#141421)}
+body{display:flex;justify-content:center;align-items:center;color:#fff}
+.container{width:92%;max-width:380px;padding:28px 22px;border-radius:22px;
+background:rgba(255,255,255,.05);backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.5)}
+.brand-title{font-size:22px;font-weight:800;margin-bottom:18px;
+background:linear-gradient(90deg,#ff416c,#ff4b2b);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-container{width:110px;height:110px;margin:0 auto 15px;
+border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.1)}
+.logo-container img{width:100%;height:100%;object-fit:cover}
+.bold-profit{font-size:15px;font-weight:700;color:#ff4b2b;margin-bottom:12px}
+.timer-box{margin:12px 0;font-size:24px;font-weight:800;color:#ff416c}
+.live-box{margin-bottom:18px;font-size:14px;font-weight:600;display:flex;
+justify-content:center;align-items:center;gap:8px;opacity:.9}
+.live-dot{width:8px;height:8px;background:#ff3b3b;border-radius:50%;
+animation:pulse 1s infinite}
+@keyframes pulse{0%{opacity:1}50%{opacity:.3}100%{opacity:1}}
+.counter-number{font-weight:700;color:#ffcc33}
+.cta-btn{width:100%;padding:15px 0;border:none;border-radius:14px;
+font-size:16px;font-weight:700;cursor:pointer;margin-bottom:12px;
+position:relative;overflow:hidden}
+.primary{background:linear-gradient(90deg,#ff416c,#ff4b2b);color:#fff}
+.secondary{background:linear-gradient(90deg,#ffb347,#ffcc33);color:#111}
+.cta-btn:after{content:"";position:absolute;top:0;left:-100%;
+width:100%;height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+animation:shine 2.2s infinite}
+@keyframes shine{0%{left:-100%}100%{left:100%}}
+.footer-text{font-size:13px;opacity:.7;margin-top:10px}
+</style>
+
+<script>
+
+let timeLeft = 30;
+let timerInterval;
+let liveCount;
+
+/* FIXED TIMER */
+function startTimer(){
+const el = document.getElementById("countdown");
+
+timerInterval = setInterval(() => {
+
+if(timeLeft <= 0){
+clearInterval(timerInterval);
+el.textContent = "00:00";
+return;
+}
+
+el.textContent = "00:" + (timeLeft < 10 ? "0"+timeLeft : timeLeft);
+timeLeft--;
+
+},1000);
+}
+
+/* LIVE COUNTER */
+function startLive(){
+const e = document.getElementById("liveNumber");
+liveCount = Math.floor(Math.random()*140)+180;
+e.textContent = liveCount;
+
+setInterval(()=>{
+liveCount += Math.floor(Math.random()*2)+1;
+e.textContent = liveCount;
+},3000);
+}
+
+/* REDIRECT */
+function go(){
+fbq('track','Subscribe',{content_name:'Telegram Join',value:1,currency:'INR'});
+const link = atob("aHR0cHM6Ly90Lm1lLytDb1JLV0lTN0pqZ3dOMlEx");
+setTimeout(()=>{window.location.href = link;},200);
+}
+
+window.onload=function(){
+startTimer();
+startLive();
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+<h1 class="brand-title">ADARSH OFFICIAL</h1>
+
+<div class="logo-container">
+<img src="https://i.ibb.co/dJkF2f1y/photo-2026-02-19-03-08-24.jpg">
+</div>
+
+<p class="bold-profit">⚡️DAILY ₹2000 FREE GIFTCODE🤑</p>
+
+<div class="timer-box" id="countdown">00:30</div>
+
+<div class="live-box">
+<div class="live-dot"></div>
+LIVE • <span class="counter-number" id="liveNumber"></span> USERS IN VC
+</div>
+
+<button class="cta-btn primary" onclick="go()">JOIN NOW</button>
+<button class="cta-btn secondary" onclick="go()">VIP CHANNEL ACCESS</button>
+
+<p class="footer-text">Official Channel • Secure Access</p>
+
+</div>
+</body>
+</html>
